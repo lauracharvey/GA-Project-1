@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  height: 600px;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 11.11%;
+  height: 11.11%;
+  border: 1px solid #d10057;
+}
+
+.alien {
+  background-image: url('https://www.flaticon.com/svg/static/icons/svg/3306/3306574.svg');
+  background-size: contain;
+}
+
+.player {
+  background-image: url('https://www.flaticon.com/svg/static/icons/svg/3306/3306605.svg');
+  background-size: contain;
+}
+
+.laser {
+  background-image: url('https://www.flaticon.com/svg/static/icons/svg/3460/3460051.svg');
+  background-size: contain;
+}
