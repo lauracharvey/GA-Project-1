@@ -3,13 +3,49 @@
 }
 
 body {
+  positive: relative;
   width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 0;
+  background: #000000;
+  color: #ffffff;
+}
+
+.counters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.heading {
+  width: 100px;
+}
+
+.points-counter {
+  width: 100px;
+  height: 50px;
+  border: solid 1px #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  color: #ffffff;
+}
+
+.lives-counter {
+  width: 100px;
+  height: 50px;
+  border: solid 1px #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  color: #ffffff;
 }
 
 .grid-container {
@@ -26,17 +62,63 @@ body {
   border: 1px solid #d10057;
 }
 
-.alien {
-  background-image: url('https://www.flaticon.com/svg/static/icons/svg/3306/3306574.svg');
+div.alien {
+  background-image: url('darth-vader.png');
   background-size: contain;
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .player {
-  background-image: url('https://www.flaticon.com/svg/static/icons/svg/3306/3306605.svg');
+  position: relative;
+  overflow: hidden;
+}
+
+.player::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: 35%;
+  z-index: -1;
+  background: url('spaceship.png') 0 0 no-repeat;
+  background-size: 50px;
+  transform: rotate(-45deg);
+}
+
+div.laser {
+  background-image: url('bluelaser.png');
+  background-position: center;
   background-size: contain;
 }
 
-.laser {
-  background-image: url('https://www.flaticon.com/svg/static/icons/svg/3460/3460051.svg');
+.bomb {
+  background-image: url('https://www.flaticon.com/svg/static/icons/svg/1374/1374387.svg');
   background-size: contain;
+}
+
+.game-over {
+  z-index: 9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: #ffffff;
+}
+
+.button-container {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  margin: 10px 0 10px 0;
 }

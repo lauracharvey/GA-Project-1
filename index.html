@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Lauras Space Invaders</title>
 </head>
+
 <body>
   <h1>SPACE INVADERS</h1>
+  <div class="counters">
+    <div class="heading">
+      <h2>POINTS</h2>
+    </div>
+    <div class="points-counter">
+      <h2>0</h2>
+    </div>
+    <div class="heading">
+      <h2>LIVES</h2>
+    </div>
+    <div class="lives-counter">
+      <h2>3</h2>
+    </div>
+  </div>
+
   <div class="grid-container"></div>
-  <button class="start">Start</button>  
-  <button class="reset">Reset</button>  
+  <div class="button-container">
+    <button class="start">Start</button>
+    <button class="reset">Reset</button>
+    <button class="rules">Rules</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
