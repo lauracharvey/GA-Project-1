@@ -89,6 +89,7 @@ h3 {
 }
 
 .grid-container {
+  position: relative;
   border: solid 4px rgb(119, 4, 4); 
   margin: 50px;
   display: flex;
@@ -146,14 +147,43 @@ div.laser {
   background-position: center;
 }
 
-.game-over {
+.gameover {
   z-index: 9;
+  background: #0f0d0d;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
+  top: 200px;
+  left: 100px;
+  width: 400px;
   height: 200px;
-  background: #ffffff;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: solid 4px rgb(119, 4, 4);
+  transform: rotate(180deg);
+}
+
+.winner {
+  z-index: 9;
+  background: #0f0d0d;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  width: 400px;
+  height: 200px;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: solid 4px rgb(119, 4, 4);
+  transform: rotate(180deg);
+}
+
+.winner > img {
+  width: 60px;
+  margin: 10px;
 }
 
 .button-container {
@@ -199,4 +229,8 @@ button:focus {
 .rules-div > img {
   width: 50px;
   margin: none;
+}
+
+.rules {
+  width: 200px;
 }

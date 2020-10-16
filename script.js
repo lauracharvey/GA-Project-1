@@ -1,5 +1,5 @@
 const body = document.querySelector('body')
-const gameOver = document.querySelector('.game-over')
+const gameOver = document.querySelector('.gameover')
 const grid = document.querySelector('.grid-container')
 const width = 9
 const gridSquares = []
@@ -8,6 +8,7 @@ const reset = document.querySelector('.reset')
 const laser = document.querySelector('.laser')
 const counter = document.querySelector('.points-counter')
 const livesCounter = document.querySelector('.lives-counter')
+const winner = document.querySelector('.winner')
 
 let player = 77
 let aliens = [1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25]
@@ -54,7 +55,11 @@ function bombMovement() {
       lives -= 1
       livesCounter.innerHTML = `<h2>${lives}</h2>`
     } else if (lives === 0) {
-      alert('GAME OVER - YOU RAN OUT OF LIVES')
+      
+      gameOver.style.display = 'flex'
+      clearInterval(interval)
+      clearInterval(bombInterval)
+      
     } else if (gridSquares[bombStart].classList.contains('laser')) {
       
       clearInterval(bombInterval)
@@ -76,7 +81,7 @@ function dropBombs() {
 
     bombMovement()
 
-  }, 5000)
+  }, 3500)
 }
 
 start.addEventListener('click', () => {
@@ -153,11 +158,12 @@ start.addEventListener('click', () => {
 
     } if ((aliens.some(alien => alien > (width ** 2) - width - 1))) {
 
-      alert('GAME OVER')
+      gameOver.style.display = 'flex'
       clearInterval(interval)
       clearInterval(dropBombs)
     } if (points === 2100){
-      alert('CONGRATULATIONS! YOU WIN!!!')
+      
+      winner.style.display = 'flex'
       clearInterval(interval)
       clearInterval(dropBombs)
     }
