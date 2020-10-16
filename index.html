@@ -5,7 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Lauras Space Invaders</title>
+  <title>Stranger Invaders</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
@@ -13,11 +17,11 @@
   <div class="rules-div">
     <h2>HOW TO PLAY</h2>
     <img src="icons8-a-key-96.png">
-    <h3>MOVE LEFT <-</h3>
-    <img src="icons8-s-key-96.png">
-    <h3>MOVE RIGHT -></h3>
-    <img src="icons8-w-key-96.png">
-    <h3>SHOOT</h3>
+    <h3>MOVE LEFT <-< /h3>
+        <img src="icons8-s-key-96.png">
+        <h3>MOVE RIGHT -></h3>
+        <img src="icons8-w-key-96.png">
+        <h3>SHOOT</h3>
   </div>
 
   <div class="grid-container">
@@ -32,26 +36,26 @@
 
   <aside>
     <h1>STRANGER INVADERS</h1>
-  <div class="counters">
-    <div class="heading">
-      <h2>POINTS</h2>
+    <div class="counters">
+      <div class="heading">
+        <h2>POINTS</h2>
+      </div>
+      <div class="points-counter">
+        <h2>0</h2>
+      </div>
+      <div class="heading">
+        <h2>LIVES</h2>
+      </div>
+      <div class="lives-counter">
+        <h2>3</h2>
+      </div>
     </div>
-    <div class="points-counter">
-      <h2>0</h2>
-    </div>
-    <div class="heading">
-      <h2>LIVES</h2>
-    </div>
-    <div class="lives-counter">
-      <h2>3</h2>
-    </div>
-  </div>
 
-  <div class="button-container">
-    <button class="start">START</button>
-    <button class="reset">RESET</button>
-    <button onclick="rulesFunction()" class="rules">HOW TO PLAY</button>
-  </div>
+    <div class="button-container">
+      <button onclick="rulesFunction()" class="rules">HOW TO PLAY</button>
+      <button class="start">START</button>
+      <button class="reset">RESET</button>
+    </div>
 
   </aside>
 
