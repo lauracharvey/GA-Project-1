@@ -8,7 +8,6 @@ const reset = document.querySelector('.reset')
 const laser = document.querySelector('.laser')
 const counter = document.querySelector('.points-counter')
 const livesCounter = document.querySelector('.lives-counter')
-const rules = document.querySelector('.rules')
 
 let player = 77
 let aliens = [1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25]
@@ -19,6 +18,15 @@ let lives = 3
 reset.addEventListener('click', () => {
   location.reload()
 })
+
+function rulesFunction () {
+  const rulesDiv = document.querySelector('.rules-div');
+  if (rulesDiv.style.display === "none") {
+    rulesDiv.style.display = "flex";
+  } else {
+    rulesDiv.style.display = "none";
+  }
+}
 
 for (let i = 0; i < width ** 2; i++) {
   const div = document.createElement('div')
@@ -44,10 +52,14 @@ function bombMovement() {
     if (gridSquares[player].classList.contains('bomb') && lives > 0) {
       gridSquares[bombStart].classList.remove('bomb')
       lives -= 1
-      livesCounter.innerHTML = lives
+      livesCounter.innerHTML = `<h2>${lives}</h2>`
     } else if (lives === 0) {
       alert('GAME OVER - YOU RAN OUT OF LIVES')
-      location.reload()
+    } else if (gridSquares[bombStart].classList.contains('laser')) {
+      
+      clearInterval(bombInterval)
+      gridSquares[bombStart].classList.remove('bomb')
+
     } else if ((bombStart > (width ** 2) - width - 1)) {
       gridSquares[bombStart].classList.remove('bomb')
       clearInterval(bombInterval)
@@ -71,16 +83,13 @@ start.addEventListener('click', () => {
 
   document.addEventListener('keypress', (event) => {
     const key = event.key
-
-    console.log(key)
-
     if (key === 'w') {
       fireLaser()
-    } else if (key === 'a' && !(player % width === 0)) {
+    } else if (key === 's' && !(player % width === 0)) {
       gridSquares[player].classList.remove('player')
       player -= 1
       gridSquares[player].classList.add('player')
-    } else if (key === 's' && !(player % width === width - 1)) {
+    } else if (key === 'a' && !(player % width === width - 1)) {
       gridSquares[player].classList.remove('player')
       player += 1
       gridSquares[player].classList.add('player')
@@ -147,7 +156,10 @@ start.addEventListener('click', () => {
       alert('GAME OVER')
       clearInterval(interval)
       clearInterval(dropBombs)
-  
+    } if (points === 2100){
+      alert('CONGRATULATIONS! YOU WIN!!!')
+      clearInterval(interval)
+      clearInterval(dropBombs)
     }
   }, 1500)
 })
@@ -167,7 +179,7 @@ function fireLaser() {
       gridSquares[laserStart].classList.remove('alien')
       clearInterval(laserInterval)
       points += 100
-      counter.innerHTML = points
+      counter.innerHTML = `<h2>${points}</h2>`
     } else {
       gridSquares[laserStart].classList.remove('laser')
       gridSquares[laserStart -= width].classList.add('laser')

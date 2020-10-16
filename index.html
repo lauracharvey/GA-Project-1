@@ -9,7 +9,21 @@
 </head>
 
 <body>
-  <h1>SPACE INVADERS</h1>
+
+  <div class="rules-div">
+    <h2>HOW TO PLAY</h2>
+    <img src="icons8-a-key-96.png">
+    <h3>MOVE LEFT <-</h3>
+    <img src="icons8-s-key-96.png">
+    <h3>MOVE RIGHT -></h3>
+    <img src="icons8-w-key-96.png">
+    <h3>SHOOT</h3>
+  </div>
+
+  <div class="grid-container"></div>
+
+  <aside>
+    <h1>STRANGER INVADERS</h1>
   <div class="counters">
     <div class="heading">
       <h2>POINTS</h2>
@@ -25,12 +39,13 @@
     </div>
   </div>
 
-  <div class="grid-container"></div>
   <div class="button-container">
-    <button class="start">Start</button>
-    <button class="reset">Reset</button>
-    <button class="rules">Rules</button>
+    <button class="start">START</button>
+    <button class="reset">RESET</button>
+    <button onclick="rulesFunction()" class="rules">RULES</button>
   </div>
+
+  </aside>
 
   <script src="script.js"></script>
 </body>
