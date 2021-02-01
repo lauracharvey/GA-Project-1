@@ -16,7 +16,7 @@ In the brief we were given a list of logic and interval based games to choose fr
 
 I chose Space Invaders as it was the one I found most fun and logical.
 
-##Brief 
+## Brief 
 
 
 * Render a game in the browser
@@ -26,18 +26,18 @@ I chose Space Invaders as it was the one I found most fun and logical.
 * Deploy your game online, where the rest of the world can access it
 * Use semantic markup for HTML and CSS (adhere to best practices)
 
-####Requirements
+#### Requirements
 
 * The player should be able to clear at least one wave of aliens
 * The player's score should be displayed at the end of the game
 
-##Tech Stack
+## Tech Stack
 
 * HTML
 * CSS
 * JavaScript
 
-##Approach
+## Approach
 
 I knew I had to implement a grid for my Space Invaders style game, I used JavaScript to implement my grid squares so my game was easily scalable.
 
